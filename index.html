@@ -1,0 +1,800 @@
+!DOCTYPE html
+html lang=zh-CN
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleVagines - 专业黑头清洁解决方案title
+    link rel=stylesheet href=httpscdnjs.cloudflare.comajaxlibsfont-awesome6.4.0cssall.min.css
+    style
+         {
+            margin 0;
+            padding 0;
+            box-sizing border-box;
+            font-family 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        root {
+            --primary #8a6bc9;
+            --primary-dark #6b4fa9;
+            --secondary #ff7eb3;
+            --light #f8f5ff;
+            --dark #333;
+            --gray #777;
+            --light-gray #f5f5f5;
+            --white #fff;
+            --shadow 0 5px 15px rgba(0,0,0,0.1);
+            --transition all 0.3s ease;
+        }
+        
+        body {
+            line-height 1.6;
+            color var(--dark);
+            background-color var(--white);
+        }
+        
+        .container {
+            width 100%;
+            max-width 1200px;
+            margin 0 auto;
+            padding 0 20px;
+        }
+        
+         头部和导航 
+        header {
+            background-color var(--white);
+            box-shadow var(--shadow);
+            position fixed;
+            width 100%;
+            top 0;
+            z-index 1000;
+        }
+        
+        .header-container {
+            display flex;
+            justify-content space-between;
+            align-items center;
+            padding 15px 0;
+        }
+        
+        .logo {
+            display flex;
+            align-items center;
+            gap 10px;
+            font-size 1.8rem;
+            font-weight 700;
+            color var(--primary);
+            text-decoration none;
+        }
+        
+        .logo i {
+            font-size 2.2rem;
+        }
+        
+        .nav-links {
+            display flex;
+            list-style none;
+            gap 30px;
+        }
+        
+        .nav-links a {
+            text-decoration none;
+            color var(--dark);
+            font-weight 600;
+            transition var(--transition);
+            position relative;
+        }
+        
+        .nav-links ahover {
+            color var(--primary);
+        }
+        
+        .nav-links aafter {
+            content '';
+            position absolute;
+            bottom -5px;
+            left 0;
+            width 0;
+            height 2px;
+            background-color var(--primary);
+            transition var(--transition);
+        }
+        
+        .nav-links ahoverafter {
+            width 100%;
+        }
+        
+        .nav-actions {
+            display flex;
+            gap 15px;
+        }
+        
+        .btn {
+            padding 10px 25px;
+            border-radius 30px;
+            border none;
+            font-weight 600;
+            cursor pointer;
+            transition var(--transition);
+            display inline-block;
+            text-decoration none;
+            text-align center;
+        }
+        
+        .btn-primary {
+            background-color var(--primary);
+            color var(--white);
+        }
+        
+        .btn-primaryhover {
+            background-color var(--primary-dark);
+            transform translateY(-3px);
+            box-shadow 0 7px 15px rgba(138, 107, 201, 0.3);
+        }
+        
+        .btn-outline {
+            background-color transparent;
+            color var(--primary);
+            border 2px solid var(--primary);
+        }
+        
+        .btn-outlinehover {
+            background-color rgba(138, 107, 201, 0.1);
+            transform translateY(-3px);
+        }
+        
+         英雄区域 
+        .hero {
+            padding 150px 0 80px;
+            background linear-gradient(135deg, #f8f5ff 0%, #e8e1ff 100%);
+            overflow hidden;
+        }
+        
+        .hero-content {
+            display flex;
+            align-items center;
+            justify-content space-between;
+            gap 50px;
+        }
+        
+        .hero-text {
+            flex 1;
+        }
+        
+        .hero-image {
+            flex 1;
+            display flex;
+            justify-content center;
+        }
+        
+        .hero h1 {
+            font-size 3.2rem;
+            line-height 1.2;
+            margin-bottom 20px;
+            color var(--dark);
+        }
+        
+        .hero h1 span {
+            color var(--primary);
+        }
+        
+        .hero p {
+            font-size 1.2rem;
+            color var(--gray);
+            margin-bottom 30px;
+            max-width 500px;
+        }
+        
+        .product-image {
+            max-width 100%;
+            border-radius 20px;
+            box-shadow 0 20px 40px rgba(0,0,0,0.1);
+            transform perspective(1000px) rotateY(-10deg);
+            transition var(--transition);
+        }
+        
+        .product-imagehover {
+            transform perspective(1000px) rotateY(0deg);
+        }
+        
+         产品特色 
+        .features {
+            padding 100px 0;
+            background-color var(--white);
+        }
+        
+        .section-title {
+            text-align center;
+            margin-bottom 60px;
+        }
+        
+        .section-title h2 {
+            font-size 2.5rem;
+            color var(--dark);
+            margin-bottom 15px;
+        }
+        
+        .section-title p {
+            color var(--gray);
+            max-width 600px;
+            margin 0 auto;
+        }
+        
+        .features-grid {
+            display grid;
+            grid-template-columns repeat(auto-fit, minmax(280px, 1fr));
+            gap 30px;
+        }
+        
+        .feature-card {
+            background-color var(--light);
+            padding 40px 30px;
+            border-radius 15px;
+            text-align center;
+            transition var(--transition);
+            box-shadow var(--shadow);
+        }
+        
+        .feature-cardhover {
+            transform translateY(-10px);
+            box-shadow 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width 80px;
+            height 80px;
+            background-color rgba(138, 107, 201, 0.1);
+            border-radius 50%;
+            display flex;
+            align-items center;
+            justify-content center;
+            margin 0 auto 25px;
+            color var(--primary);
+            font-size 2.2rem;
+        }
+        
+        .feature-card h3 {
+            font-size 1.5rem;
+            margin-bottom 15px;
+            color var(--dark);
+        }
+        
+         技术展示 
+        .technology {
+            padding 100px 0;
+            background-color var(--light-gray);
+        }
+        
+        .tech-content {
+            display flex;
+            align-items center;
+            gap 60px;
+        }
+        
+        .tech-image {
+            flex 1;
+        }
+        
+        .tech-text {
+            flex 1;
+        }
+        
+        .tech-image img {
+            width 100%;
+            border-radius 15px;
+            box-shadow var(--shadow);
+        }
+        
+        .tech-text h2 {
+            font-size 2.5rem;
+            margin-bottom 20px;
+            color var(--dark);
+        }
+        
+        .tech-text p {
+            margin-bottom 25px;
+            color var(--gray);
+        }
+        
+        .tech-list {
+            list-style none;
+            margin-bottom 30px;
+        }
+        
+        .tech-list li {
+            margin-bottom 15px;
+            display flex;
+            align-items center;
+            gap 10px;
+        }
+        
+        .tech-list i {
+            color var(--primary);
+            font-size 1.2rem;
+        }
+        
+         使用步骤 
+        .steps {
+            padding 100px 0;
+            background-color var(--white);
+        }
+        
+        .steps-container {
+            display flex;
+            justify-content space-between;
+            flex-wrap wrap;
+            gap 30px;
+        }
+        
+        .step {
+            flex 1;
+            min-width 250px;
+            text-align center;
+            padding 30px 20px;
+        }
+        
+        .step-number {
+            width 60px;
+            height 60px;
+            background-color var(--primary);
+            color var(--white);
+            border-radius 50%;
+            display flex;
+            align-items center;
+            justify-content center;
+            font-size 1.8rem;
+            font-weight 700;
+            margin 0 auto 25px;
+        }
+        
+        .step h3 {
+            font-size 1.5rem;
+            margin-bottom 15px;
+            color var(--dark);
+        }
+        
+         产品对比 
+        .comparison {
+            padding 100px 0;
+            background-color var(--light);
+        }
+        
+        .comparison-table {
+            overflow-x auto;
+            box-shadow var(--shadow);
+            border-radius 15px;
+        }
+        
+        table {
+            width 100%;
+            border-collapse collapse;
+            background-color var(--white);
+        }
+        
+        thead {
+            background-color var(--primary);
+            color var(--white);
+        }
+        
+        th, td {
+            padding 20px;
+            text-align center;
+            border-bottom 1px solid #eee;
+        }
+        
+        th {
+            font-weight 700;
+            font-size 1.2rem;
+        }
+        
+        td {
+            color var(--gray);
+        }
+        
+        tbody trhover {
+            background-color rgba(138, 107, 201, 0.05);
+        }
+        
+        .check {
+            color #4CAF50;
+            font-size 1.5rem;
+        }
+        
+        .cross {
+            color #f44336;
+            font-size 1.5rem;
+        }
+        
+         页脚 
+        footer {
+            background-color #222;
+            color var(--white);
+            padding 70px 0 30px;
+        }
+        
+        .footer-content {
+            display grid;
+            grid-template-columns repeat(auto-fit, minmax(250px, 1fr));
+            gap 40px;
+            margin-bottom 50px;
+        }
+        
+        .footer-column h3 {
+            font-size 1.5rem;
+            margin-bottom 25px;
+            color var(--white);
+        }
+        
+        .footer-links {
+            list-style none;
+        }
+        
+        .footer-links li {
+            margin-bottom 15px;
+        }
+        
+        .footer-links a {
+            color #aaa;
+            text-decoration none;
+            transition var(--transition);
+        }
+        
+        .footer-links ahover {
+            color var(--primary);
+            padding-left 5px;
+        }
+        
+        .social-icons {
+            display flex;
+            gap 15px;
+            margin-top 20px;
+        }
+        
+        .social-icons a {
+            width 40px;
+            height 40px;
+            background-color rgba(255, 255, 255, 0.1);
+            border-radius 50%;
+            display flex;
+            align-items center;
+            justify-content center;
+            color var(--white);
+            transition var(--transition);
+        }
+        
+        .social-icons ahover {
+            background-color var(--primary);
+            transform translateY(-5px);
+        }
+        
+        .copyright {
+            text-align center;
+            padding-top 30px;
+            border-top 1px solid #444;
+            color #aaa;
+            font-size 0.9rem;
+        }
+        
+         响应式设计 
+        @media (max-width 992px) {
+            .hero-content, .tech-content {
+                flex-direction column;
+            }
+            
+            .hero {
+                padding 130px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size 2.8rem;
+            }
+        }
+        
+        @media (max-width 768px) {
+            .nav-links {
+                display none;
+            }
+            
+            .hero h1 {
+                font-size 2.3rem;
+            }
+            
+            .section-title h2, .tech-text h2 {
+                font-size 2rem;
+            }
+            
+            .features, .technology, .steps, .comparison {
+                padding 70px 0;
+            }
+        }
+        
+        @media (max-width 576px) {
+            .btn {
+                padding 10px 20px;
+                font-size 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size 2rem;
+            }
+        }
+    style
+head
+body
+    !-- 头部导航 --
+    header
+        div class=container header-container
+            a href=# class=logo
+                i class=fas fa-spai
+                spanvaginesspan
+            a
+            
+            ul class=nav-links
+                lia href=#home首页ali
+                lia href=#features产品特色ali
+                lia href=#technology核心技术ali
+                lia href=#steps使用步骤ali
+                lia href=#comparison产品对比ali
+            ul
+        div
+    header
+
+    !-- 英雄区域 --
+    section class=hero id=home
+        div class=container hero-content
+            div class=hero-text
+                h1告别黑头，焕发spanVaginesspanh1
+                pVagines，深层清洁毛孔，有效去除黑头、白头及油脂，让肌肤恢复自然透亮。安全不伤肤。p
+                div style=display flex; gap 15px; margin-top 40px;
+                    a href=#features class=btn btn-primary了解更多a
+                    a href=#technology class=btn btn-outline核心技术a
+                div
+            div
+            div class=hero-image
+                img src=.imagesproduct-main.jpg alt=净澈美容仪 class=product-image
+                !-- 图片路径：.imagesproduct-main.jpg --
+            div
+        div
+    section
+
+    !-- 产品特色 --
+    section class=features id=features
+        div class=container
+            div class=section-title
+                h2为什么选择Vaginesh2
+                p结合创新科技与人性化设计，带来专业级家庭护肤体验p
+            div
+            
+            div class=features-grid
+                div class=feature-card
+                    div class=feature-icon
+                        i class=fas fa-vacuumi
+                    div
+                    h3深层清洁护肤h3
+                    p精准清除黑头，不损伤肌肤屏障，清洁更彻底。p
+                div
+                
+                div class=feature-card
+                    div class=feature-icon
+                        i class=fas fa-braini
+                    div
+                    h3冰敷舒缓泛红h3
+                    p避免过度清洁，呵护敏感肌。p
+                div
+                
+                div class=feature-card
+                    div class=feature-icon
+                        i class=fas fa-dropleti
+                    div
+                    h3金属滚轮h3
+                    p搭配专用精华液，促进营养成分吸收，清洁后及时补水。p
+                div
+                
+                div class=feature-card
+                    div class=feature-icon
+                        i class=fas fa-battery-fulli
+                    div
+                    h3便携小巧h3
+                    p随时随地，办公，旅行，出差，满足全家人的护肤需求。p
+                div
+            div
+        div
+    section
+
+    !-- 技术展示 --
+    section class=technology id=technology
+        div class=container tech-content
+            div class=tech-image
+                img src=.imagestechnology-detail.jpg alt=美容仪技术展示
+                !-- 图片路径：.imagestechnology-detail.jpg --
+            div
+            div class=tech-text
+                h2创新科技，专业护肤h2
+                pVagines采用不锈钢材质，经过特殊工艺处理，光滑不伤肤，易于清洁。p
+                
+                ul class=tech-list
+                    lii class=fas fa-check-circlei深层清洁毛孔li
+                    lii class=fas fa-check-circlei 轻松使用，无皮肤损伤li
+                    lii class=fas fa-check-circlei 适应不同肤质li
+                    lii class=fas fa-check-circlei 304不锈钢吸头，安全卫生li
+                    lii class=fas fa-check-circlei 无线便携设计，随时随地使用li
+                ul
+            div
+        div
+    section
+
+    !-- 使用步骤 --
+    section class=steps id=steps
+        div class=container
+            div class=section-title
+                h2简单四步，净澈肌肤h2
+                p只需几分钟，轻松完成专业级黑头清洁护理p
+            div
+            
+            div class=steps-container
+                div class=step
+                    div class=step-number1div
+                    h3清洁面部h3
+                    p使用温水清洁面部，打开毛孔，为黑头清洁做好准备。p
+                div
+                
+                div class=step
+                    div class=step-number2div
+                    h3黑头清除h3
+                    p刮勺轻柔滑动，疏通毛孔并去除堆积物。p
+                div
+                
+                div class=step
+                    div class=step-number3div
+                    h3冷却面部滚轮h3
+                    p舒缓肌肤并提升精华吸收，适合居家护理。p
+                div
+                
+                div class=step
+                    div class=step-number4div
+                    h3清洁工具h3
+                    p每次使用后冲洗2合1面部滚轮和刮勺工具，保持清洁。p
+                div
+            div
+        div
+    section
+
+    !-- 产品对比 --
+    section class=comparison id=comparison
+        div class=container
+            div class=section-title
+                h2与传统方法对比h2
+                p更高效、更安全、更舒适的黑头清洁体验p
+            div
+            
+            div class=comparison-table
+                table
+                    thead
+                        tr
+                            th功能对比th
+                            thvaginesth
+                            th传统鼻贴th
+                            th手挤黑头th
+                        tr
+                    thead
+                    tbody
+                        tr
+                            td清洁效果td
+                            tdi class=fas fa-check checki 深层清洁td
+                            tdi class=fas fa-times crossi 表面清洁td
+                            tdi class=fas fa-times crossi 不彻底td
+                        tr
+                        tr
+                            td皮肤损伤td
+                            tdi class=fas fa-check checki 无损伤td
+                            tdi class=fas fa-times crossi 损伤角质层td
+                            tdi class=fas fa-times crossi 易留疤痕td
+                        tr
+                        tr
+                            td使用舒适度td
+                            tdi class=fas fa-check checki 舒适无痛td
+                            tdi class=fas fa-times crossi 撕拉疼痛td
+                            tdi class=fas fa-times crossi 疼痛明显td
+                        tr
+                        tr
+                            td毛孔影响td
+                            tdi class=fas fa-check checki 收缩毛孔td
+                            tdi class=fas fa-times crossi 扩大毛孔td
+                            tdi class=fas fa-times crossi 扩大毛孔td
+                        tr
+                        tr
+                            td长期效果td
+                            tdi class=fas fa-check checki 减少黑头再生td
+                            tdi class=fas fa-times crossi 黑头反复td
+                            tdi class=fas fa-times crossi 黑头反复td
+                        tr
+                    tbody
+                table
+            div
+        div
+    section
+
+    !-- 页脚 --
+    footer
+        div class=container
+            div class=footer-content
+                div class=footer-column
+                    h3净澈美容仪h3
+                    p致力于为用户提供专业、安全、高效的家用美容解决方案，让每个人都能享受专业级护肤体验。p
+                    div class=social-icons
+                        a href=#i class=fab fa-weixinia
+                        a href=#i class=fab fa-weiboia
+                        a href=#i class=fab fa-tiktokia
+                        a href=#i class=fab fa-xiaohongshuia
+                    div
+                div
+                
+                div class=footer-column
+                    h3快速链接h3
+                    ul class=footer-links
+                        lia href=#home首页ali
+                        lia href=#features产品特色ali
+                        lia href=#technology核心技术ali
+                        lia href=#steps使用步骤ali
+                        lia href=#comparison产品对比ali
+                    ul
+                div
+                
+                div class=footer-column
+                    h3联系我们h3
+                    ul class=footer-links
+                        lii class=fas fa-phone-alti 000-000-0000li
+                        lii class=fas fa-envelopei service@xxxxxx.comli
+                        lii class=fas fa-map-marker-alti 深圳市宝安区xxxxxli
+                    ul
+                div
+            div
+            
+            div class=copyright
+                p&copy; 2023 vagines 版权所有  粤ICP备12345678号p
+            div
+        div
+    footer
+
+    script
+         平滑滚动
+        document.querySelectorAll('a[href^=#]').forEach(anchor = {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top targetElement.offsetTop - 80,
+                        behavior 'smooth'
+                    });
+                }
+            });
+        });
+        
+         头部滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY  100) {
+                header.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
+            }
+        });
+        
+         产品图像悬停效果增强
+        const productImage = document.querySelector('.product-image');
+        if(productImage) {
+            productImage.addEventListener('mouseenter', function() {
+                this.style.transform = 'perspective(1000px) rotateY(0deg) scale(1.05)';
+            });
+            
+            productImage.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateY(-10deg) scale(1)';
+            });
+        }
+    script
+body
+html
