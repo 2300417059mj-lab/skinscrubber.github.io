@@ -64,7 +64,7 @@
 
         .logo h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-size: clamp(1.5rem, 3vw, 28px);
             font-weight: 600;
             color: var(--primary-color);
             letter-spacing: 1px;
@@ -158,6 +158,7 @@
         .banner {
             position: relative;
             height: 85vh;
+            min-height: 500px;
             margin-top: 80px;
             overflow: hidden;
         }
@@ -194,7 +195,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-90%, -90%);
+            transform: translate(-50%, -50%);
             text-align: center;
             color: white;
             width: 90%;
@@ -204,14 +205,14 @@
 
         .banner-content h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
             font-weight: 600;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .banner-content p {
-            font-size: 1.3rem;
+            font-size: clamp(1rem, 2vw, 1.3rem);
             margin-bottom: 30px;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
@@ -241,8 +242,8 @@
             top: 50%;
             transform: translateY(-50%);
             background-color: rgba(255, 255, 255, 0.8);
-            width: 50px;
-            height: 50px;
+            width: clamp(40px, 5vw, 50px);
+            height: clamp(40px, 5vw, 50px);
             border-radius: 50%;
             display: flex;
             justify-content: center;
@@ -257,11 +258,11 @@
         }
 
         .banner-nav.prev {
-            left: 30px;
+            left: clamp(15px, 3vw, 30px);
         }
 
         .banner-nav.next {
-            right: 30px;
+            right: clamp(15px, 3vw, 30px);
         }
 
         .banner-dots {
@@ -290,7 +291,7 @@
 
         /* 内容部分通用样式 */
         section {
-            padding: 100px 0;
+            padding: clamp(60px, 15vw, 100px) 0;
         }
 
         section:nth-child(even) {
@@ -299,12 +300,12 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: clamp(40px, 10vw, 70px);
         }
 
         .section-title h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 15px;
@@ -312,7 +313,7 @@
 
         .section-title p {
             color: #777;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             max-width: 600px;
             margin: 0 auto;
         }
@@ -321,11 +322,13 @@
         .product-showcase {
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: clamp(30px, 8vw, 60px);
+            flex-wrap: wrap;
         }
 
         .product-image {
             flex: 1;
+            min-width: 300px;
             text-align: center;
         }
 
@@ -337,17 +340,18 @@
 
         .product-info {
             flex: 1;
+            min-width: 300px;
         }
 
         .product-info h3 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
             color: var(--primary-color);
             margin-bottom: 20px;
         }
 
         .product-info p {
             margin-bottom: 30px;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             color: #555;
         }
 
@@ -374,7 +378,7 @@
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            gap: clamp(20px, 5vw, 40px);
         }
 
         .tech-card {
@@ -398,7 +402,7 @@
         }
 
         .tech-card h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
             margin-bottom: 15px;
             color: var(--primary-color);
         }
@@ -445,7 +449,7 @@
         }
 
         .step-content h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
             color: var(--primary-color);
             margin-bottom: 15px;
         }
@@ -454,7 +458,7 @@
         .comparison {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: clamp(20px, 5vw, 40px);
             flex-wrap: wrap;
         }
 
@@ -484,7 +488,7 @@
         }
 
         .comparison-item h3 {
-            font-size: 1.8rem;
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
             color: var(--primary-color);
             margin-bottom: 15px;
         }
@@ -493,7 +497,7 @@
         .scenes {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: clamp(20px, 5vw, 30px);
         }
 
         .scene-card {
@@ -526,7 +530,7 @@
         }
 
         .scene-overlay h3 {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
             margin-bottom: 10px;
         }
 
@@ -534,11 +538,13 @@
         .brand-story {
             display: flex;
             align-items: center;
-            gap: 60px;
+            gap: clamp(30px, 8vw, 60px);
+            flex-wrap: wrap;
         }
 
         .brand-image {
             flex: 1;
+            min-width: 300px;
         }
 
         .brand-image img {
@@ -549,23 +555,24 @@
 
         .brand-content {
             flex: 1;
+            min-width: 300px;
         }
 
         .brand-content h3 {
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
             color: var(--primary-color);
             margin-bottom: 20px;
         }
 
         .brand-content p {
             margin-bottom: 25px;
-            font-size: 1.1rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
             color: #555;
         }
 
         .slogan {
             font-style: italic;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
             color: var(--accent-color);
             margin-top: 30px;
             text-align: center;
@@ -585,24 +592,24 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
             margin-bottom: 10px;
         }
 
         .footer-column {
             flex: 1;
-            min-width: 80px;
+            min-width: 200px;
         }
 
         .footer-column h3 {
             font-size: 1.3rem;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
             color: white;
         }
 
         .footer-column p, .footer-column a {
             color: #bbb;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             display: block;
             transition: var(--transition);
             text-decoration: none;
@@ -613,7 +620,6 @@
             padding-left: 5px;
         }
 
-  
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -622,14 +628,19 @@
             font-size: 0.9rem;
         }
 
-        /* 响应式设计 */
+        /* 平滑滚动 */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 响应式设计优化 */
         @media (max-width: 992px) {
             .product-showcase, .brand-story {
                 flex-direction: column;
             }
             
-            .banner-content h2 {
-                font-size: 2.8rem;
+            .banner {
+                height: 70vh;
             }
         }
 
@@ -648,6 +659,7 @@
                 opacity: 0;
                 visibility: hidden;
                 transition: var(--transition);
+                z-index: 999;
             }
 
             nav.active {
@@ -677,43 +689,42 @@
                 display: block;
             }
 
-            .banner-content h2 {
-                font-size: 2.2rem;
+            .step {
+                flex-direction: column;
+                align-items: flex-start;
             }
-
-            .banner-content p {
-                font-size: 1.1rem;
-            }
-
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-
-            .banner-nav {
-                width: 40px;
-                height: 40px;
-            }
-
-            .banner-nav.prev {
-                left: 15px;
-            }
-
-            .banner-nav.next {
-                right: 15px;
+            
+            .step-number {
+                margin-bottom: 15px;
             }
         }
 
-        @media (max-width: 480px) {
-            .banner-content h2 {
-                font-size: 1.8rem;
-            }
-
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-
+        @media (max-width: 576px) {
             .feature {
                 width: 100%;
+            }
+            
+            .scene-card {
+                height: 280px;
+            }
+            
+            .comparison-image img {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .header-container {
+                padding: 10px 15px;
+            }
+            
+            .lang-btn {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+            
+            .step-content {
+                padding: 20px;
             }
         }
     </style>
@@ -735,8 +746,10 @@
                 <ul>
                     <li><a href="#home" data-i18n="nav.home">首页</a></li>
                     <li><a href="#product" data-i18n="nav.product">产品展示</a></li>
-                                   <li><a href="#function" data-i18n="nav.function">功能介绍</a></li>
-                                <li><a href="#scenes" data-i18n="nav.scenes">使用场景</a></li>
+                    <li><a href="#tech" data-i18n="nav.tech">核心技术</a></li>
+                    <li><a href="#function" data-i18n="nav.function">功能介绍</a></li>
+                    <li><a href="#comparison" data-i18n="nav.comparison">使用对比</a></li>
+                    <li><a href="#scenes" data-i18n="nav.scenes">使用场景</a></li>
                     <li><a href="#story" data-i18n="nav.story">品牌故事</a></li>
                 </ul>
             </nav>
@@ -1014,7 +1027,6 @@
                 <div class="footer-column">
                     <h3>AUIOEY</h3>
                     <p data-i18n="footer.desc">我们致力于研发创新护肤工具，让专业级护肤体验走进每个家庭。</p>
-                
                 </div>
                 
                 <div class="footer-column">
@@ -1023,8 +1035,10 @@
                     <a href="#product" data-i18n="nav.product">产品展示</a>
                     <a href="#tech" data-i18n="nav.tech">核心技术</a>
                     <a href="#function" data-i18n="nav.function">功能介绍</a>
+                    <a href="#scenes" data-i18n="nav.scenes">使用场景</a>
+                    <a href="#story" data-i18n="nav.story">品牌故事</a>
                 </div>
-                
+            </div>
             
             <div class="copyright">
                 <p>&copy; 2025 AUIOEY. <span data-i18n="footer.rights">保留所有权利</span> | <span data-i18n="footer.slogan">Care simply, Love Gently</span></p>
@@ -1117,18 +1131,11 @@
                 "story.name": "关于 AUIOEY",
                 "story.desc1": "AUIOEY诞生于2025年，我们观察到市场上缺乏既能高效清洁又能促进护肤品吸收的多功能护肤工具，于是决心改变这一现状。",
                 "story.desc2": "经过半年研发，我们成功将面膜精华液刮抹与黑头清洁功能结合，创造出这款创新产品。我们相信，专业的护肤不应该只存在于美容院，每个人在家都能享受高效、安全、舒适的护肤体验。",
-                "story.desc3": "'Care simply, Love Gently'不仅是我们品牌的 slogan，更是我们对每一位用户的承诺。我们致力于研发简单易用、温和有效的护肤工具，让护肤成为一种享受，而非负担。",
+                "story.desc3": "\"Care simply, Love Gently\"不仅是我们品牌的 slogan，更是我们对每一位用户的承诺。我们致力于研发简单易用、温和有效的护肤工具，让护肤成为一种享受，而非负担。",
                 
                 // 页脚
                 "footer.desc": "我们致力于研发创新护肤工具，让专业级护肤体验走进每个家庭。",
                 "footer.links": "快速链接",
-                "footer.contact": "联系我们",
-                "footer.address": "上海市浦东新区美容科技园",
-                "footer.email": "Email: info@auioey.com",
-                "footer.phone": "电话: 400-123-4567",
-                "footer.newsletter": "订阅资讯",
-                "footer.newsletterDesc": "订阅获取最新产品信息和护肤技巧",
-                "footer.subscribe": "订阅",
                 "footer.rights": "保留所有权利",
                 "footer.slogan": "Care simply, Love Gently"
             },
@@ -1136,129 +1143,110 @@
                 // 导航栏
                 "nav.home": "Home",
                 "nav.product": "Product",
-                "nav.tech": "Core Technology",
+                "nav.tech": "Technology",
                 "nav.function": "Functions",
-                "nav.comparison": "Before & After",
-                "nav.scenes": "Usage Scenarios",
+                "nav.comparison": "Comparison",
+                "nav.scenes": "Scenes",
                 "nav.story": "Brand Story",
                 
                 // Banner部分
                 "banner.title1": "AUIOEY Professional Skincare Tool",
-                "banner.desc1": "2-in-1 design of facial mask essence scraper and blackhead cleaning spatula, bringing you an efficient and convenient skincare experience",
+                "banner.desc1": "2-in-1 design for mask essence scraping and blackhead removal, revolutionizing your skincare experience",
                 "banner.btn": "Learn More",
                 "banner.title2": "Care simply, Love Gently",
                 "banner.desc2": "Simple care, gentle love - your skin deserves the most meticulous treatment",
                 "banner.btn2": "Learn More",
                 "banner.title3": "Innovative Skincare Technology",
-                "banner.desc3": "Precision scraping technology, bringing professional-grade at-home skincare experience",
+                "banner.desc3": "Precision scraping technology for professional at-home skincare experience",
                 "banner.btn3": "Learn More",
                 
                 // 产品展示
-                "product.title": "Product Display",
-                "product.subtitle": "2-in-1 design of facial mask essence scraper and blackhead cleaning spatula, bringing you an efficient and convenient skincare experience",
-                "product.name": "Facial Mask Essence Scraper & Blackhead Cleaning Spatula",
-                "product.desc": "Our product adopts ergonomic design, combining mask essence scraping and blackhead cleaning functions. Through precise stainless steel blade head and adjustable vibration frequency, it can gently and effectively clean pores while ensuring mask essence is fully absorbed by the skin.",
-                "product.feature1": "3-in-1 design, multi-functional spatula head",
-                "product.feature2": "Food-grade stainless steel blade head",
-                "product.feature3": "Multi-scenario usage",
+                "product.title": "Product Showcase",
+                "product.subtitle": "2-in-1 design for mask essence scraping and blackhead removal, bringing you efficient and convenient skincare experience",
+                "product.name": "Mask Essence Scraper & Blackhead Remover",
+                "product.desc": "Our product adopts ergonomic design, combining mask essence scraping and blackhead removal functions. With precision stainless steel blade, it can gently and effectively clean pores while ensuring full absorption of mask essence by the skin.",
+                "product.feature1": "3-in-1 design, multi-functional skincare",
+                "product.feature2": "Food-grade stainless steel blade",
+                "product.feature3": "Suitable for multiple scenarios",
                 "product.feature4": "Compact and lightweight, easy to clean",
-                "product.feature5": "No charging required, convenient for business trips and travel",
-                "product.feature6": "Ergonomic design, comfortable grip",
+                "product.feature5": "No charging required, convenient for travel",
+                "product.feature6": "Ergonomic design for comfortable grip",
                 "product.btn": "Learn More",
                 
                 // 核心技术
                 "tech.title": "Core Technology",
-                "tech.subtitle": "Innovative technology combined with professional skincare knowledge brings excellent skincare results",
-                "tech.tech1.title": "3-in-1 Blackhead Spatula",
-                "tech.tech1.desc": "Precision pore care, double-texture silicone head and flat spatula edge, multi-functional integrated design",
+                "tech.subtitle": "Innovative technology combined with professional skincare knowledge for excellent results",
+                "tech.tech1.title": "3-in-1 Blackhead Scraper",
+                "tech.tech1.desc": "Precision pore scraper, dual-texture silicone head and flat scraper edge, multi-functional integrated design",
                 "tech.tech2.title": "Precision Scraping Design",
-                "tech.tech2.desc": "45-degree precision angle design, effectively scraping excess essence, promoting skin absorption and reducing waste.",
+                "tech.tech2.desc": "45-degree precision angle design, effectively scrapes excess essence, promotes skin absorption, reduces waste.",
                 "tech.tech3.title": "Gentle Cleaning System",
-                "tech.tech3.desc": "Patented cleaning head design avoids excessive pulling on pores, achieving gentle and effective cleaning.",
-                "tech.tech4.title": "Replaceable Silicone Head",
-                "tech.tech4.desc": "Dot-patterned silicone surface for pore cleaning; wave-patterned silicone surface for daily massage",
+                "tech.tech3.desc": "Patented cleaning head design avoids excessive pulling on pores, achieving gentle yet effective cleaning.",
+                "tech.tech4.title": "Replaceable Silicone Heads",
+                "tech.tech4.desc": "Dot-shaped silicone surface for pore cleaning, wave-shaped silicone surface for daily massage",
                 
                 // 功能介绍
                 "function.title": "Function Introduction",
-                "function.subtitle": "Simple 4 steps, easily achieve professional skincare results",
+                "function.subtitle": "Simple 4 steps to easily achieve professional skincare results",
                 "function.step1.title": "Clean face and apply mask",
-                "function.step1.desc": "Use a mild cleanser to clean the face, then apply your favorite mask and wait 10-15 minutes for the essence to fully penetrate.",
-                "function.step2.title": "Use the scraping function to promote absorption",
-                "function.step2.desc": "After removing the mask, use UIOUEY's scraping function: gently scrape from top to bottom at a 45-degree angle to help the skin absorb the remaining essence.",
-                "function.step3.title": "Switch to cleaning mode",
-                "function.step3.desc": "Switch to the blackhead cleaning mode: gently move in circles on areas that need cleaning (such as the nose, chin) to clean pores.",
-                "function.step4.title": "Clean and maintain",
-                "function.step4.desc": "Clean the tool head after use, then proceed with your daily skincare routine (e.g., toner, essence, moisturizer).",
+                "function.step1.desc": "Clean your face with a mild cleanser, then apply your favorite mask and wait 10-15 minutes for the essence to fully penetrate.",
+                "function.step2.title": "Use scraping function to promote absorption",
+                "function.step2.desc": "After removing the mask, use AUIOEY's scraping function, gently scrape from bottom to top at a 45-degree angle to help the skin absorb remaining essence.",
+                "function.step3.title": "Switch to cleaning shovel mode",
+                "function.step3.desc": "Switch to blackhead cleaning mode, move gently in circular motions on areas needing cleaning (such as nose, chin) to clean pores.",
+                "function.step4.title": "Cleaning and maintenance",
+                "function.step4.desc": "Clean the tool head after use, and proceed with daily skincare routine such as toner, essence and moisturizer.",
                 
                 // 使用前后对比
-                "comparison.title": "Before & After Comparison",
-                "comparison.subtitle": "Witness significant skin improvement, experience the difference AUIOEY brings",
+                "comparison.title": "Before & After",
+                "comparison.subtitle": "Witness significant improvement in your skin, feel the difference with AUIOEY",
                 "comparison.before": "Before Use",
-                "comparison.beforeDesc": "Large pores, obvious blackheads, weak skin absorption ability, more mask essence waste.",
+                "comparison.beforeDesc": "Large pores, obvious blackheads, weak skin absorption capacity, more waste of mask essence.",
                 "comparison.after": "After Use",
-                "comparison.afterDesc": "Clean pores, reduced blackheads, smooth and delicate skin, significantly improved mask essence absorption effect.",
+                "comparison.afterDesc": "Clean pores, reduced blackheads, smooth and delicate skin, significantly improved absorption of mask essence.",
                 
                 // 使用场景
                 "scenes.title": "Usage Scenarios",
-                "scenes.subtitle": "Adapt to various skincare needs, become your daily skincare assistant",
+                "scenes.subtitle": "Adapts to multiple skincare needs, becoming your capable assistant in daily skincare",
                 "scenes.scene1": "Daily Skincare",
-                "scenes.scene1Desc": "Use after daily cleansing to promote skincare product absorption and enhance skincare effect.",
+                "scenes.scene1Desc": "Use after daily face washing to promote absorption of skincare products and enhance skincare effects.",
                 "scenes.scene2": "Deep Cleaning",
-                "scenes.scene2Desc": "1-2 deep cleanings per week, effectively remove blackheads, whiteheads, and purify pores.",
+                "scenes.scene2Desc": "Deep cleaning 1-2 times a week, effectively removes blackheads, whiteheads, and purifies pores.",
                 "scenes.scene3": "Mask Care",
-                "scenes.scene3Desc": "Use after applying mask, scrape excess essence to improve mask absorption effect.",
+                "scenes.scene3Desc": "Use after applying mask to scrape excess essence and enhance mask absorption.",
                 
                 // 品牌故事
                 "story.title": "Brand Story",
-                "story.subtitle": "Born from the pursuit of beauty, committed to allowing everyone to enjoy professional-level skincare experience",
+                "story.subtitle": "Born from the pursuit of beauty, dedicated to bringing professional skincare experience to everyone",
                 "story.name": "About AUIOEY",
-                "story.desc1": "AUIOEY was born in 2025, We noticed the market lacked multi-functional skincare tools that could both clean efficiently and promote skincare product absorption, so we decided to change this situation.",
-                "story.desc2": "After half a year of research and development, we successfully combined mask essence scraping and blackhead cleaning functions to create this innovative product. We believe professional skincare should not be limited to beauty salons—everyone can enjoy efficient, safe, and comfortable skincare at home.",
-                "story.desc3": "“Care simply, Love Gently” is not just our brand slogan, but also our promise to every user. We are dedicated to developing simple-to-use, gentle, and effective skincare tools, turning skincare into a pleasure rather than a burden.",
+                "story.desc1": "AUIOEY was born in 2025. We observed the lack of multi-functional skincare tools in the market that can both effectively clean and promote skincare absorption, so we decided to change this situation.",
+                "story.desc2": "After six months of research and development, we successfully combined mask essence scraping and blackhead removal functions to create this innovative product. We believe that professional skincare should not only exist in beauty salons, but everyone can enjoy efficient, safe and comfortable skincare experience at home.",
+                "story.desc3": "\"Care simply, Love Gently\" is not only our brand slogan, but also our commitment to every user. We are committed to developing easy-to-use, gentle and effective skincare tools, making skincare an enjoyment rather than a burden.",
                 
                 // 页脚
-                "footer.desc": "We are committed to developing innovative skincare tools, bringing professional skincare experiences into every household.",
+                "footer.desc": "We are committed to developing innovative skincare tools, bringing professional skincare experience to every family.",
                 "footer.links": "Quick Links",
-                "footer.contact": "Contact Us",
-                "footer.address": "Beauty Technology Park, Pudong New District, Shanghai",
-                "footer.email": "Email: info@auioey.com",
-                "footer.phone": "Phone: 400-123-4567",
-                "footer.newsletter": "Newsletter",
-                "footer.newsletterDesc": "Subscribe to get the latest product information and skincare tips",
-                "footer.subscribe": "Subscribe",
-                "footer.rights": "All rights reserved",
+                "footer.rights": "All Rights Reserved",
                 "footer.slogan": "Care simply, Love Gently"
             }
         };
 
-        // 当前语言
-        let currentLang = 'zh';
+        // 语言切换功能
+        document.getElementById('zhBtn').addEventListener('click', function() {
+            setLanguage('zh');
+            this.classList.add('active');
+            document.getElementById('enBtn').classList.remove('active');
+        });
 
-        // DOM元素
-        const zhBtn = document.getElementById('zhBtn');
-        const enBtn = document.getElementById('enBtn');
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
-        const bannerSlides = document.querySelectorAll('.banner-slide');
-        const bannerDots = document.querySelectorAll('.dot');
-        const prevSlideBtn = document.getElementById('prevSlide');
-        const nextSlideBtn = document.getElementById('nextSlide');
+        document.getElementById('enBtn').addEventListener('click', function() {
+            setLanguage('en');
+            this.classList.add('active');
+            document.getElementById('zhBtn').classList.remove('active');
+        });
 
-        // 切换语言函数
-        function switchLanguage(lang) {
-            currentLang = lang;
-            
-            // 更新语言按钮状态
-            if (lang === 'zh') {
-                zhBtn.classList.add('active');
-                enBtn.classList.remove('active');
-            } else {
-                enBtn.classList.add('active');
-                zhBtn.classList.remove('active');
-            }
-            
-            // 更新页面文本
-            document.querySelectorAll('[data-i18n]').forEach(element => {
+        function setLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang][key]) {
                     element.textContent = translations[lang][key];
@@ -1266,113 +1254,119 @@
             });
         }
 
-        // 语言切换事件
-        zhBtn.addEventListener('click', () => switchLanguage('zh'));
-        enBtn.addEventListener('click', () => switchLanguage('en'));
+        // 移动端菜单功能
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
 
-        // 移动菜单切换
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', function() {
             mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        // 导航栏滚动效果
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.padding = '0';
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            const icon = this.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             } else {
-                header.style.padding = '';
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
         });
 
-        // Banner幻灯片
-        let currentSlide = 0;
-        
-        function showSlide(index) {
-            // 确保索引在有效范围内
-            if (index < 0) index = bannerSlides.length - 1;
-            if (index >= bannerSlides.length) index = 0;
-            
-            // 隐藏所有幻灯片
-            bannerSlides.forEach(slide => slide.classList.remove('active'));
-            bannerDots.forEach(dot => dot.classList.remove('active'));
-            
-            // 显示当前幻灯片
-            bannerSlides[index].classList.add('active');
-            bannerDots[index].classList.add('active');
-            
-            currentSlide = index;
-        }
-        
-        // 下一张幻灯片
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
-        
-        // 上一张幻灯片
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
-        
-        // 自动播放
-        let slideInterval = setInterval(nextSlide, 5000);
-        
-        // 重置自动播放计时器
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000);
-        }
-        
-        // 事件监听器
-        prevSlideBtn.addEventListener('click', () => {
-            prevSlide();
-            resetInterval();
-        });
-        
-        nextSlideBtn.addEventListener('click', () => {
-            nextSlide();
-            resetInterval();
-        });
-        
-        // 点状指示器点击事件
-        bannerDots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const slideIndex = parseInt(dot.getAttribute('data-slide'));
-                showSlide(slideIndex);
-                resetInterval();
-            });
-        });
-        
-        // 平滑滚动到锚点
-        document.querySelectorAll('nav a, .btn[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // 关闭移动端菜单
+        // 点击导航链接后关闭移动菜单
+        const navLinks = document.querySelectorAll('#mainNav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (mainNav.classList.contains('active')) {
                     mainNav.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                    
-                    // 平滑滚动到目标元素
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
                 }
             });
         });
 
-        // 初始化语言
-        switchLanguage('zh');
+        // Banner轮播功能
+        const slides = document.querySelectorAll('.banner-slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            // 隐藏所有幻灯片
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            
+            // 移除所有dots的active类
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // 显示当前幻灯片和激活当前dot
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let newIndex = currentSlide + 1;
+            if (newIndex >= slides.length) {
+                newIndex = 0;
+            }
+            showSlide(newIndex);
+        }
+
+        function prevSlide() {
+            let newIndex = currentSlide - 1;
+            if (newIndex < 0) {
+                newIndex = slides.length - 1;
+            }
+            showSlide(newIndex);
+        }
+
+        // 点击dots切换幻灯片
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                resetSlideInterval();
+            });
+        });
+
+        // 前后按钮点击事件
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetSlideInterval();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetSlideInterval();
+        });
+
+        // 自动轮播
+        function startSlideInterval() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetSlideInterval() {
+            clearInterval(slideInterval);
+            startSlideInterval();
+        }
+
+        // 初始化轮播
+        startSlideInterval();
+
+        // 滚动时导航栏效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '10px 0';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = 'var(--shadow)';
+            }
+        });
     </script>
 </body>
 </html>
